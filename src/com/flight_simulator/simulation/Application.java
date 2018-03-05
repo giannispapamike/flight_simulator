@@ -7,23 +7,27 @@ import com.flight_simulator.graphics.Menu;
 import javax.swing.*;
 import java.awt.*;
 
+/*
+* Main class:
+* Is responsible for handling all program aspects,
+* such as creating the GUI, the simulation timer and providing
+* to the event handler the methods for manipulating simulation.
+*/
+
 public class Application {
 
-    // Create frame's menu.
+    // Create main frame's menu.
     private static Menu menu = new Menu();
     // Create the default data.
     private static SimulationData data = new SimulationData();
+    // Default input = default
     private static String input = "default";
     // Create Main Container.
     private static MainContainer container = new MainContainer();
+    // Create the timer.
     private static SimulationTimer timer;
 
     public static void main(String[] args) {
-
-        // Create Simulation Timer.
-//        timer = new SimulationTimer(100, data);
-//        timer.startTimer();
-
 
         // Create the graphics.
         SwingUtilities.invokeLater(Application::createAndShowGui);
@@ -79,13 +83,6 @@ public class Application {
         appFrame.setVisible(true);
 
         container.addMessage("Application initialized.");
-
-        // TODO elsewhere
-//        for (Flight flight : data.getInvalidFlights()) {
-//            container.addMessage("Flight with id: " + flight.getFlightId() + " invalid for simulation.");
-//        }
-
-        menu.setPaintAccess(container);
 
     }
 
@@ -147,9 +144,6 @@ public class Application {
         container.addMessage("Creating new simulation with MapID: " + input);
     }
 
-//    public static void endSimulation() {
-//        container.addMessage("Simulation ended.");
-//    }
 
     public static void closeApplication() {
         System.out.println("User closed the application.");

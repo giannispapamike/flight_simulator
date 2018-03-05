@@ -72,10 +72,4 @@ public class SimulationTimer {
         return this.time;
     }
 
-
-    public void setPaintAccess(MainContainer container) {
-        this.container = container;
-
-        scheduler.setPaintAccess(container);
-    }
 }

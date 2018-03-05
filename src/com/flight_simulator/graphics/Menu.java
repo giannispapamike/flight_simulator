@@ -78,7 +78,4 @@ public class Menu {
         return this.menu;
     }
 
-    public void setPaintAccess(MainContainer container) {
-//        timer.setPaintAccess(container);
-    }
 }
